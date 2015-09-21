@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A test web site for accessibility evaluations">
+
+    <title>Apply to Acme - the bad version | Acme Widgets</title>
+
+    
+
+
+<link rel="stylesheet" href="css/pure.css">
+
+<style>
+.visually-hidden {
+position: absolute !important;
+clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+clip: rect(1px, 1px, 1px, 1px);
+padding:0 !important;
+border:0 !important;
+height: 1px !important;
+width: 1px !important;
+overflow: hidden;
+}
+body:hover .visually-hidden a,
+body:hover .visually-hidden input,
+body:hover .visually-hidden button {
+display: none !important;
+}
+</style>
+
+
+
+
+
+  
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="css/layouts/side-menu.css">
+    <!--<![endif]-->
+  
+
+
+    
+
+    
+
+</head>
+<body>
+
+
+
+
+
+
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+        <i class="visually-hidden">Navigation</i>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading" href="index.html">Acme</a>
+
+            <ul class="pure-menu-list" role="navigation">
+                <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">Home</a></li>
+                <li class="pure-menu-item"><a href="apply.html" class="pure-menu-link">Apply - Good</a></li>
+                <li class="pure-menu-item"><a href="apply-bad.html" class="pure-menu-link"  aria-current="page">Apply - Bad</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main id="main">
+        
+         <header class="header">
+            <h1>Join the Acme Widgets Team</h1>
+            <h2>Good luck filling out this form</h2>
+        </header>
+
+        <div class="content">
+            <h2 class="content-subhead">We're excited to meet you</h2>
+            <p>
+                This version of the application form features common mistakes that make a form difficult to use. The labels are actually spans made to look like labels. All of the inputs are using the standard "text" type, and they are not using the standard name/id values that trigger browsers to autofill.
+            </p>
+
+            <h3 class="content-subhead">Bad Acme Application Form</h3>
+           <form action="thankyou.html" class="pure-form pure-form-stacked">
+           <div class="pure-g">
+           <div class="fieldset pure-u-1-2">
+           <span class="legend">Your personal information</span>
+           <span class="label"  >First Name</span>
+           <input type="text	" name="f" id="f"  placeholder="Jane">
+           
+           <span class="label">Last Name</span>
+           <input type="text	" name="l" id="l"  placeholder="Doe">
+           
+           
+           <span class="label">Telephone Number</span>
+           <input type="tel" name="t" id="t"  placeholder="650-555-1212">
+           
+           
+           <span class="label">Email</span>
+           <input type="email" name="e" id="e"  placeholder="jane@doe.com">
+           </div>
+           <div class="pure-u-1-2 fieldset">
+           <span class="legend">Your Address</span>
+           <span class="label"  >Street Address</span>
+           <input type="text	" name="s" id="s"  placeholder="1 first ave">
+           <span class="label"  >City</span>
+           <input type="text" name="c" id="c" placeholder="Any Town">
+           <span class="label" >State</span>
+           <select id="st" name="st">
+           <option>California</option>
+           <option>Not California</option>
+           </select>
+           <span class="label">Zip</span>
+           <input type="text" name="z" id="z">
+           <span class="label pure-checkbox">
+           <input type="checkbox" name="current" id="current">
+           This is my current address, I want to stay in this area</span>
+           
+           </div>
+           <div class="pure-u-1-2 fieldset">
+           <span class="legend">Current Employer</span>
+           <span class="label"  >Company</span>
+           <input type="text" name="co" id="co">
+           <span class="label"  >Job Title</span>
+           <input type="text" id="jo" name="jo">
+           <span class="label"  >Street Address</span>
+           <input type="text	" name="estreet" id="estreet"  placeholder="1 first ave">
+           <span class="label"  >City</span>
+           <input type="text" name="ecity" id="ecity" placeholder="Any Town">
+           <span class="label"  >State</span>
+           <select id="estate" name="estate">
+           <option>California</option>
+           <option>Not California</option>
+           </select>
+           <span class="label" >Zipcode</span>
+           <input type="text" name="ezip" id="ezip">
+           <span class="label pure-checkbox">
+           <input type="checkbox" name="contact" id="contact">
+           It's ok to contact my current employer.
+           </span>
+           <span class="label" >When did you start working at this job?</span>
+           <input type="text" id="start" name="start">
+           </div>
+           <div class="pure-u-1-2 fieldset">
+           <span class="legend">Education</span>
+           <span class="label"  >University</span>
+           <input type="text" name="uni" id="uni">
+           <span class="label"  for="diploma">Upload your diploma</span>
+           <span class="pure-button" onClick="alert('nice diploma!');">Upload</span>
+           <span class="label"  >Graduation Date</span>
+           <input type="text" name="grad" id="grad">
+           <div class="fieldset">
+           <span class="legend">Graduation Grade</span>
+           <span class="label pure-radio">
+           <input type="radio" name="grade" value="a">
+           A - Cream of the crop!</span>
+           
+           <span class="label pure-radio">
+           <input type="radio" name="grade" value="b">
+           B - I slept in a few times</span>
+           
+           
+           <span class="label pure-radio">
+           <input type="radio" name="grade" value="c">
+           C - I'm just an average mug</span>
+           
+           <span class="label pure-radio">
+           <input type="radio" name="grade" value="d">
+           D - The professors didn't like me</span>
+           
+           <span class="label pure-radio">
+           <input type="radio" name="grade" value="f">
+           F - But I mastered the party circuit</span>
+           </div>
+           </div>
+           </div>
+           <button  type="submit" class="pure-button pure-button-primary">Submit</button>
+           </form>
+           </div>
+           
+    </main>
+</div>
+
+
+
+
+
+<script src="js/ui.js"></script>
+
+
+</body>
+</html>
