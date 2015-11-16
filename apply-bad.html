@@ -11,8 +11,10 @@
 
 
 <link rel="stylesheet" href="css/pure.css">
+<link href="https://rawgithub.com/tilomitra/csstypography/master/css/pure-typography.css" type="text/css" rel="stylesheet">
 
 <style>
+#menu .pure-menu-selected, #menu .pure-menu-heading {color:#fff;}
 .visually-hidden {
 position: absolute !important;
 clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
@@ -56,7 +58,7 @@ display: none !important;
 
 
 
-<div id="layout">
+<div id="layout" class="pure-type">
     <!-- Menu toggle -->
     <a href="#menu" id="menuLink" class="menu-link">
         <!-- Hamburger icon -->
@@ -70,8 +72,12 @@ display: none !important;
 
             <ul class="pure-menu-list" role="navigation">
                 <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">Home</a></li>
-                <li class="pure-menu-item"><a href="apply.html" class="pure-menu-link">Apply - Good</a></li>
-                <li class="pure-menu-item"><a href="apply-bad.html" class="pure-menu-link"  aria-current="page">Apply - Bad</a></li>
+                <li class="pure-menu-item"><a href="data-good.html" class="pure-menu-link">Products - Good</a></li>
+                <li class="pure-menu-item"><a href="data-bad.html" class="pure-menu-link">Products - Bad</a></li>
+                <li class="pure-menu-item"><a href="content-good.html" class="pure-menu-link">About - Good</a></li>
+                <li class="pure-menu-item"><a href="content-bad.html" class="pure-menu-link">About - Bad</a></li>
+                <li class="pure-menu-item"><a href="apply.html" class="pure-menu-link" >Apply - Good</a></li>
+                <li class="pure-menu-item"><a href="apply-bad.html" class="pure-menu-link pure-menu-selected">Apply - Bad</a></li>
             </ul>
         </div>
     </div>
@@ -92,10 +98,10 @@ display: none !important;
             <h3 class="content-subhead">Bad Acme Application Form</h3>
            <form action="thankyou.html" class="pure-form pure-form-stacked">
            <div class="pure-g">
-           <div class="fieldset pure-u-1-2">
-           <span class="legend">Your personal information</span>
-           <span class="label"  >First Name</span>
-           <input type="text	" name="f" id="f"  placeholder="Jane">
+           <div class="fieldset pure-u-1-2"><!-- div instead of fieldset -->
+           <span class="legend">Your personal information</span><!-- span instead of legend -->
+           <span class="label"  >First Name</span><!-- span instead of label -->
+           <input type="text	" name="f" id="f"  placeholder="Jane"><!-- placeholder is not an adequate label -->
            
            <span class="label">Last Name</span>
            <input type="text	" name="l" id="l"  placeholder="Doe">

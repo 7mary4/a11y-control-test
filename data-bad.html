@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A test web site for accessibility evaluations">
+
+    <title>Product Grid - bad | Acme Widgets</title>
+
+    
+
+
+<link rel="stylesheet" href="css/pure.css">
+<link href="https://rawgithub.com/tilomitra/csstypography/master/css/pure-typography.css" type="text/css" rel="stylesheet">
+
+<style>
+#menu .pure-menu-selected, #menu .pure-menu-heading {color:#fff;}
+.visually-hidden {
+position: absolute !important;
+clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+clip: rect(1px, 1px, 1px, 1px);
+padding:0 !important;
+border:0 !important;
+height: 1px !important;
+width: 1px !important;
+overflow: hidden;
+}
+body:hover .visually-hidden a,
+body:hover .visually-hidden input,
+body:hover .visually-hidden button {
+display: none !important;
+}
+
+/*pseudo-table*/
+    .grid
+    {
+        display: table;
+    }
+   
+    .row
+    {
+        display: table-row;
+    }
+    .gridcell, .columnheader
+    {
+        display: table-cell;
+        border: solid;
+        border-width: thin;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+	.columnheader{
+		background:#e0e0e0;
+		color:#000;
+	}
+
+</style>
+
+
+
+
+
+  
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="css/layouts/side-menu.css">
+    <!--<![endif]-->
+  
+
+
+    
+
+    
+
+</head>
+<body>
+
+
+
+
+
+
+<div id="layout" class="pure-type">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+        <i class="visually-hidden">Navigation</i>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading" href="index.html">Acme</a>
+
+            <ul class="pure-menu-list" class="navigation">
+                <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">Home</a></li>
+                <li class="pure-menu-item"><a href="data-good.html" class="pure-menu-link">Products - Good</a></li>
+                <li class="pure-menu-item"><a href="data-bad.html" class="pure-menu-link pure-menu-selected">Products - Bad</a></li>
+                <li class="pure-menu-item"><a href="content-good.html" class="pure-menu-link">About - Good</a></li>
+                <li class="pure-menu-item"><a href="content-bad.html" class="pure-menu-link">About - Bad</a></li>
+                <li class="pure-menu-item"><a href="apply.html" class="pure-menu-link" >Apply - Good</a></li>
+                <li class="pure-menu-item"><a href="apply-bad.html" class="pure-menu-link">Apply - Bad</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main id="main">
+        
+         <header class="header">
+            <h1>Acme Widgets</h1>
+        </header>
+
+        <div class="content">
+            <h2 class="content-subhead">Choose the right widget for you</h2>
+            <p>
+                Acme widgets is more than just anvils. Choose the right tool for your job. 
+            </p>
+            <p><strong>This page includes common problems with data tables</strong>. Your automated tests should trigger several errors. You will also find additional problems when using manual testing. </p>
+            <h3>Compare Acme Widgets</h3>
+            <table class="pure-table pure-table-bordered"><!-- this table has no summary attribute -->
+            
+            <tr><!-- a common problem is using th without a scope -->
+            <th>Name</th>
+            <th>Description</th>
+            <th>Purpose</th>
+            <th>Cost</th>
+            </tr>
+            <!-- no thead or tbody -->
+            <tr>
+            <td>Anvil</td>
+            <td>Very heavy block of iron</td>
+            <td>Smashing the RoadRunner</td>
+            <td>$29.95</td>
+            </tr>
+            <tr>
+            <td>Rocket</td>
+            <td>Jet power</td>
+            <td>Go as fast as the bird</td>
+            <td>$19.99</td>
+            </tr>
+            <tr>
+            <td>Tornado Generator</td>
+            <td>Create a local tornado</td>
+            <td>Create chaos</td>
+            <td>$4,590</td>
+            </tr>
+            <tr>
+            <td>Pseudo Tunnel</td>
+            <td>Make a rock look like a tunnel</td>
+            <td>Watch the bird run into a rock</td>
+            <td>$4.25</td>
+            </tr>
+            </table>
+            
+            <p class="subhead">Last order</p>
+            <table class="pure-table pure-table-bordered">
+            <tr><td colspan="4">Order from October 25, 2015</td></tr><!-- table row using colspan to create a pseudo caption -->
+            
+            <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Quantity</strong></td>
+            <td><strong>Cost</strong></td>
+            <td><strong>Subtotal</strong></td>
+            </tr>
+            <tr>
+            <td >Anvil</td>
+            <td >1</td>
+            <td >$29.95</td>
+            <td >$29.95</td>
+            </tr>
+            <tr>
+            <td >Pseudo Tunnel</td>
+            <td >4</td>
+            <td >$4.25</td>
+            <td >$17.00</td>
+            </tr>
+            <tr>
+            <td >Rocket</td>
+            <td >2</td>
+            <td >$19.99</td>
+            <td >$39.98</td>
+            </tr>
+            <tr>
+            <td colspan="3" id="total">Total:</td>
+            <td >$86.93</td>
+            </tr>
+            </table>
+
+<h3>Pseudo table using ARIA</h3>
+<p>This is a pseudo-table using divs and the CSS display:table for layout. This may not appear as an error with automated testing, but should be discovered via manual testing.  </p>
+<div class="grid"  >
+
+<div class="row">
+<div class="columnheader">
+Name
+</div>
+<div class="columnheader">
+Description
+</div>
+<div class="columnheader">
+Cost
+</div>
+</div>
+<div class="row">
+<div class="gridcell">
+Anvil
+</div>
+<div class="gridcell">
+Very heavy block of iron
+</div>
+<div class="gridcell">
+$29.95
+</div>
+</div>
+<div class="row">
+<div class="gridcell">
+Rocket
+</div>
+<div class="gridcell">
+Jet power
+</div>
+<div class="gridcell">
+$19.99
+</div>
+</div>
+</div>
+           </div>
+           
+    </main>
+</div>
+
+
+
+
+
+<script src="js/ui.js"></script>
+
+
+</body>
+</html>

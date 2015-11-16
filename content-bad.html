@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A test article page for accessibility evaluations">
+
+    <title>About Acme - Bad | Acme Widgets</title>
+
+    
+
+
+<link rel="stylesheet" href="css/pure.css">
+<link href="https://rawgithub.com/tilomitra/csstypography/master/css/pure-typography.css" type="text/css" rel="stylesheet">
+
+<style>
+#menu .pure-menu-selected, #menu .pure-menu-heading {color:#fff;}
+.visually-hidden {
+position: absolute !important;
+clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+clip: rect(1px, 1px, 1px, 1px);
+padding:0 !important;
+border:0 !important;
+height: 1px !important;
+width: 1px !important;
+overflow: hidden;
+}
+body:hover .visually-hidden a,
+body:hover .visually-hidden input,
+body:hover .visually-hidden button {
+display: none !important;
+}
+</style>
+
+
+
+
+
+  
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="css/layouts/side-menu.css">
+    <!--<![endif]-->
+  
+
+
+    
+
+    
+
+</head>
+<body>
+
+
+
+
+
+
+<div id="layout" class="pure-type">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+        <i class="visually-hidden">Navigation</i>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading" href="index.html">Acme</a>
+
+            <ul class="pure-menu-list" role="navigation">
+                <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">Home</a></li>
+                <li class="pure-menu-item"><a href="data-good.html" class="pure-menu-link">Products - Good</a></li>
+                <li class="pure-menu-item"><a href="data-bad.html" class="pure-menu-link">Products - Bad</a></li>
+                <li class="pure-menu-item"><a href="content-good.html" class="pure-menu-link">About - Good</a></li>
+                <li class="pure-menu-item"><a href="content-bad.html" class="pure-menu-link pure-menu-selected">About - Bad</a></li>
+                <li class="pure-menu-item"><a href="apply.html" class="pure-menu-link" >Apply - Good</a></li>
+                <li class="pure-menu-item"><a href="apply-bad.html" class="pure-menu-link">Apply - Bad</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main id="main">
+        <article>
+         <header class="header">
+            <h1>About Acme - The Bad Version</h1>
+        </header>
+
+        <div class="content">
+            <h3 class="content-subhead">Acme's Place in  History</h3>
+            <p>Acme Widgets <img src="coyote.png"  style="float:right"><!-- no alt attribute --> is best known for its role in the Roadrunner cartoons. Acme has proudly provided genius widgets to help the coyote capture the roadrunner. While our widgets are fabulous, the low success rate is certainly due to user error. </p>
+            <p>Here's an interesting tidbit, not everybody roots for the Roadrunner. This graph shows the breakdown. <br>
+            <a href="https://hbr.org/2009/08/coyotes-vs-road-runners-managi"><img src="https://hbr.org/resources/images/article_assets/2009/08/graph-beherens.gif" alt=""></a><!-- image has empty alt attribute, but is the only element within a link --></p>
+            
+            <span class="content-subhead" style="font-size:1.25em">Using this page</span>
+            <p>
+                This is a <span style="font-weight:bold">sample page</span><!-- using styles instead of strong --> that includes <span style="text-decoration:underline" onClick="alert('this isn't a link');">many</span> <!-- fake link --> errors commonly associated with article pages. Automated testing should trigger an assortment of issues. Here's a list of elements within this page: 
+            </p>
+            <h2>Lists</h2>
+            <p><!-- fake list -->
+            * Pseudo unordered list (this one)<br>
+            * Pseudo ordered list<br>
+            * Pseudo Definition lists<br>
+            * Pseudo Headers<br>
+            * Headings out of order<br>
+            * Pseudo link<br>
+            * Pseudo blockquote <br>
+            * Image without alt attribute<br>
+            * Active image with empty alt text<br>
+            * Inline tags: marquee, blink<br>
+            </p>
+            
+            <h4>Ordered and Definition Lists</h4><!-- headings are out of order, it went from h2 to h4 -->
+            <p>Help make Acme better</p>
+            <div class="orderedlist"><!-- fake ordered list -->
+            1. Visit this project on <a href="https://github.com/7mary4/a11y-control-test">GitHub</a><br>
+            2. Fork it<br>
+            3. Send a pull request to make it better<br>
+            </div>
+            <p>Does that last list confuse you? Here's what it means.</p>
+            <div class="definitions"><!-- fake definition list -->
+            <b>GitHub</b><br>
+            GitHub is an online collaborative tool that allows people to share code, suggest changes, and propose solutions.<br>
+            <span><i>GitHub Flow is a lightweight, branch-based workflow that supports teams and projects where deployments are made regularly. This guide explains how and why GitHub Flow works. <br><a href="https://guides.github.com/">Github Guides</a></i><!-- fake blockquote -->
+            <b>Fork</b><br>
+            Download the code and prepare to <blink>make your own</blink> version of the project.
+            <b>Pull Request</b><br>
+            Ask the project manager to include your <span style="text-decoration:line-through">code</span> <i>patch</i> <!-- using styles to replicate the del and ins tags --> into the project.</div>
+            
+            
+            
+            
+            <marquee>This page was originally created on November 16, 2015.</marquee><!-- don't use the marquee -->
+</div>
+          </article>
+    </main>
+</div>
+
+
+
+
+
+<script src="js/ui.js"></script>
+
+
+</body>
+</html>
