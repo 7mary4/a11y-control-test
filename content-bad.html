@@ -58,7 +58,7 @@ display: none !important;
                 <li class="pure-menu-item"><a href="data-good.html" class="pure-menu-link">Products - Good</a></li>
                 <li class="pure-menu-item"><a href="data-bad.html" class="pure-menu-link">Products - Bad</a></li>
                 <li class="pure-menu-item"><a href="content-good.html" class="pure-menu-link">About - Good</a></li>
-                <li class="pure-menu-item"><a href="content-bad.html" class="pure-menu-link pure-menu-selected">About - Bad</a></li>
+                <li class="pure-menu-item"><a href="content-bad.html" class="pure-menu-link pure-menu-selected" aria-current="page">About - Bad</a></li>
                 <li class="pure-menu-item"><a href="apply.html" class="pure-menu-link" >Apply - Good</a></li>
                 <li class="pure-menu-item"><a href="apply-bad.html" class="pure-menu-link">Apply - Bad</a></li>
             </ul>
@@ -82,7 +82,7 @@ display: none !important;
                 This is a <span style="font-weight:bold">sample page</span><!-- using styles instead of strong --> that includes <span style="text-decoration:underline" onClick="alert('this is not a link');">many</span> <!-- fake link --> errors commonly associated with article pages. Automated testing should trigger an assortment of issues. Here's a list of elements within this page:
             </p>
             <h2>Lists</h2>
-
+            <!-- input with type="image" need an alt attribute -->
             <input type="image" style="float: right" src="images/coyote.png" height="150" width="50">
 
             <p><!-- fake list -->
@@ -100,6 +100,13 @@ display: none !important;
             * Title attribute missing<br>
             * Lang attribute missing<br>
             * Doctype html is missing<br>
+            * Image map without alt text
+            <div style="float:right"><!-- this image lacks an alt attribute, the area also lacks text http://dev.w3.org/html5/spec-preview/image-maps.html -->
+            <img src="images/coyote.png" width="145" height="126" usemap="#planetmap">
+            <map name="planetmap">
+                <area shape="rect" coords="0,0,82,126"  href="http://theconcourse.deadspin.com/how-wile-e-coyote-explains-the-world-1752248034">
+            </map>
+            </div>
             </p>
 
             <!--Hyperlinks should always have text associated with them-->
@@ -119,27 +126,13 @@ display: none !important;
             <span><i>GitHub Flow is a lightweight, branch-based workflow that supports teams and projects where deployments are made regularly. This guide explains how and why GitHub Flow works. <br><a href="https://guides.github.com/">Github Guides</a></i><!-- fake blockquote -->
             <br><b>Fork</b><br>
             Download the code and prepare to <blink>make your own</blink> version of the project.
-<<<<<<< HEAD
+
             <br><b>Pull Request</b><br>
             Ask the project manager to include your <span style="text-decoration:line-through">code</span> <i>patch</i> <!-- using styles to replicate the del and ins tags --> into the project.</div>
-            
-            
-            
-=======
-            <b>Pull Request</b><br>
-            Ask the project manager to include your <span style="text-decoration:line-through">code</span> <i>patch</i> <!-- using styles to replicate the del and ins tags --> into the project.
 
-            </span>
-                </div>
->>>>>>> origin/master
             
             <marquee>This page was originally created on November 16, 2015.</marquee><!-- don't use the marquee -->
-            <p>Click on the image below to open an HTML page</p>
 
-            <img src="images/coyote.png" width="145" height="126" usemap="#planetmap">
-            <map name="planetmap">
-                <area shape="rect" coords="0,0,82,126"  href="https://www.w3.org/WAI/intro/wcag.php">
-            </map>
 </div>
           </article>
     </main>

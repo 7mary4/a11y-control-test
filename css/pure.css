@@ -610,7 +610,7 @@ outline-color:#e9322d
 .pure-menu-item {
 	padding: 0;
 	margin: 0;
-	height: 100%
+	height: auto;
 }
 .pure-menu-link, .pure-menu-heading {
 	display: block;
