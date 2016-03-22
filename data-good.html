@@ -11,6 +11,8 @@
 <link href="https://rawgithub.com/tilomitra/csstypography/master/css/pure-typography.css" type="text/css" rel="stylesheet">
 
 <style>
+#menu {display:none;}
+#layout.active #menu {display:block;}
 #menu .pure-menu-selected, #menu .pure-menu-heading {color:#fff;}
 .visually-hidden {
 position: absolute !important;
@@ -33,7 +35,7 @@ display: none !important;
     {
         display: table;
     }
-   
+
     [role="row"]
     {
         display: table-row;
@@ -50,6 +52,10 @@ display: none !important;
 		background:#e0e0e0;
 		color:#000;
 	}
+
+@media (min-width: 48em) {
+    #menu {display: block;}
+}
 
 </style>
 
@@ -87,7 +93,7 @@ display: none !important;
     </div>
 
     <main id="main">
-        
+
          <header class="header">
             <h1>Acme Widgets</h1>
         </header>
@@ -95,7 +101,7 @@ display: none !important;
         <div class="content">
             <h2 class="content-subhead">Choose the right widget for you</h2>
             <p>
-                Acme widgets is more than just anvils. Choose the right tool for your job. 
+                Acme widgets is more than just anvils. Choose the right tool for your job.
             </p>
             <p>This page includes <strong>fully accessible data tables</strong>. Your automated tests should not trigger any errors.</p>
             <h3>Compare Acme Widgets</h3>
@@ -136,7 +142,7 @@ display: none !important;
             </tr>
             </tbody>
             </table>
-            
+
             <h3>Last order</h3>
             <table summary="invoice"  class="pure-table pure-table-bordered">
             <caption>Order from October 25, 2015</caption>
@@ -215,7 +221,7 @@ $19.99
 </div>
 </div>
            </div>
-           
+
     </main>
 </div>
 
