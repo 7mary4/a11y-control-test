@@ -1,0 +1,28 @@
+/* CSS Document */
+
+
+/*Grey text that has adequate contrast 4.5:1*/
+.grey {color:#757575;}
+
+/*Grey test that doesn't have adequate contrast 4:48:1. This is not dramatic enough to notice, but automated testing should find it.*/
+.grey.bad {color:#777;}
+
+
+/* Module that contains white text against a dark background. This will be used to test container resizing.*/
+
+.callout {
+	background:#008900;
+	color:#fff;
+	display:block;
+	padding:10px 10px; 
+
+	}
+/*using min-height should allow the container to grow with the text*/
+	
+.callout.good {
+	min-height:10px;
+	}
+/* Using a set height does not allow the container to grow and the white text could stretch onto the white background. */	
+.callout.bad {
+	height:10px;
+	}		
