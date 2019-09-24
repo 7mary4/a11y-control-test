@@ -20,9 +20,9 @@
 /*using min-height should allow the container to grow with the text*/
 	
 .callout.good {
-	min-height:10px;
+	min-height:5px;
 	}
 /* Using a set height does not allow the container to grow and the white text could stretch onto the white background. */	
 .callout.bad {
-	height:10px;
+	height:5px;
 	}		

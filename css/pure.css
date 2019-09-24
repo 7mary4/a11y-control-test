@@ -33,11 +33,15 @@ audio:not([controls]) {
 [hidden], template {
 	display: none
 }
-a {
-	background-color: transparent
+a, .fakelink {
+	background-color: transparent;
+	color: #0077C5;
+	text-decoration: underline
 }
-a:active, a:hover {
-	outline: 0
+a:active, a:hover, a:focus {
+	outline: 0;
+	text-decoration:none;
+	color:#21ABF6;
 }
 abbr[title] {
 	border-bottom: 1px dotted

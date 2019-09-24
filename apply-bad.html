@@ -80,7 +80,7 @@ display: none !important;
            <div class="pure-g">
            <div class="fieldset pure-u-1-2"><!-- div instead of fieldset -->
            <span class="legend">Your personal information</span><!-- span instead of legend -->
-           <span class="label"  >First Name</span><!-- span instead of label -->
+           <span class="label"  role="contact">First Name</span><!-- span instead of label -->
            <input type="text	" name="f" id="f"  placeholder="Jane"><!-- placeholder is not an adequate label -->
            
            <span class="label">Last Name</span>
@@ -113,7 +113,7 @@ display: none !important;
            
            </div>
            <div class="pure-u-1-2 fieldset">
-           <span class="legend">Current Employer</span>
+           <span class="legend" aria-super="true">Current Employer</span>
            <span class="label"  >Company</span>
            <input type="text" name="co" id="co">
            <span class="label"  >Job Title</span>
@@ -130,7 +130,7 @@ display: none !important;
            <span class="label" >Zipcode</span>
            <input type="text" name="ezip" id="ezip">
            <span class="label pure-checkbox">
-           <input type="checkbox" name="contact" id="contact">
+           <input type="checkbox" name="contact" id="contact" aria-selected="not yet">
            It's ok to contact my current employer.
            </span>
            <span class="label" >When did you start working at this job?</span>
